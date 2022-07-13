@@ -1,0 +1,15 @@
+name: Shell Commands # name of the workflow
+
+on: [push] # events that will trigger the workflow. You can create an array using [] and separating the events with ,
+
+jobs: # describe the jobs
+  run-shell-command: # first job name
+    runs-on: ubuntu-latest # VM type in which the job is going to run
+    steps: # describe the job steps
+      - name: echo a string
+        run: echo "Hello World" # A step can be an action or command. In this case, we are using shell commands
+      - name: multiline script
+        run: | # this | is for running multiple commands
+            node -v
+            npm -v
+            
