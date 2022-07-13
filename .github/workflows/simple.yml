@@ -12,4 +12,9 @@ jobs: # describe the jobs
         run: | # this | is for running multiple commands
             node -v
             npm -v
-            
+      - name: python command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
+        
