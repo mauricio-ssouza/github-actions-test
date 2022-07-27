@@ -7,6 +7,11 @@ jobs:
       matrix:
         os: [macos-latest,ubuntu-latest,windows-latest] # It will make the job runs once for each OS.
         node_version: [6,8,10] # Now the job will run 9 times, one for each OS and for each node version.
+        exclude:
+          - os: ubuntu-latest
+            node_version: 6
+          - os: macos-latest
+            node_version: 8
     runs-on: ${{ matrix.os }}
     steps:
       - name: Log node version
